@@ -1,6 +1,6 @@
 
 # http://blog.csdn.net/crond123/article/details/3932014
 flex scan.l
-yacc calc.y
+yacc -d calc.y # -d will help to generate .h file
 gcc -o mycalc  y.tab.c
 cat calcExp.txt| ./mycalc
