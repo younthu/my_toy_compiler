@@ -8,7 +8,7 @@ void yyerror(char* s);
 %token INTEGER PLUS MINUS TIMES DIVIDE LP RP
 %%
 command : exp {printf("%d/n",$1);}
-exp: exp PLUS term {$$ = $1 + $3;}
+exp: |exp PLUS term {$$ = $1 + $3;}
 	|exp MINUS term {$$ = $1 - $3;}
 	|term {$$ = $1;}
 	;
